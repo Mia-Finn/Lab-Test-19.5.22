@@ -1,3 +1,5 @@
+//The code has to be restarted in order to generate a new tadpole!
+
 int tadLength = 10;
 float[] x = new float[tadLength];
 float[] y = new float[tadLength];
@@ -8,6 +10,11 @@ int tadLimbs = tadLength;
 float[] NotadLimbs = new float[tadLength];
 TadpoleLimbs TLI;
 
+String[] nouns = {"world", "tadpole", "chair", "dog", "on", "off", "bat", "fish", "home", "music"};
+String[] adjectives = {"dark", "happy", "crazy", "funky", "fresh", "sad", "cool", "boring", "furious", "cute"};
+int n, a;
+int w = width*10;
+int h = height;
 TadpoleName TN;
 
 void setup()
@@ -32,18 +39,27 @@ void setup()
     y[i] = (height/2);     //random(height/2,height++); //y co-ords
     NotadLimbs[i] = random(0, 9); //random no. of circles
   }
+
+  fill(255, 0, 0);
+  textSize(50);
+  textAlign(CENTER);
 }
 
 void draw()
 {
-  if (mousePressed)
+  keyPressed();
+}
+
+void keyPressed()
+{
+  if (key ==  ' ')
   {
     TL.tadpoleLength();
     TLI.tadpoleLimbs();
     TN.tadpoleName();
+    TN.randomWord();
   }
 }
-
 /*
 void tadpoleGender()
  {
