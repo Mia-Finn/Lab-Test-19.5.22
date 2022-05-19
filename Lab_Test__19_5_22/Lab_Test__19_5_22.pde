@@ -4,6 +4,7 @@
 int tadLength = 10;
 float[] x = new float[tadLength];
 float[] y = new float[tadLength];
+float[] NotadLength = new float[tadLength];
 int yPos = height;
 
 void setup()
@@ -13,8 +14,9 @@ void setup()
   
    for (int i = 0; i < tadLength; i++)
   {
-   x[i] = random(width,yPos);  
-   y[i] = random(width/2, yPos+5);
+   x[i] = (width/2);  //x co-ords
+   y[i] = random(height/2,height++); //y co-ords
+   NotadLength[i] = random(0,9); //random no. of circles
   }
   
 }
@@ -29,9 +31,9 @@ void tadLength()
   stroke(255,0,0);
   noFill();
   
-  for (int i = 0; i < tadLength; i++)
+  for (int i = 0; i < NotadLength[i]; i++)
   {
-  ellipse(x[i], y[i], 50, 50);
+  ellipse(x[i], y[i], 50, 50); //draw circles
   }
 }
 
